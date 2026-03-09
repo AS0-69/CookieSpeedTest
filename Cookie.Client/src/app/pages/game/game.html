@@ -1,0 +1,16 @@
+<div class="card" *ngIf="!gameStarted">
+  <h1>Cookie Speed Test</h1>
+  <p>Cliquez sur le cookie pour commencer !</p>
+  <button class="cookie" (click)="cliquerCible()">🍪</button>
+</div>
+
+<div class="card moving-card" 
+     *ngIf="gameStarted"
+     [style.top.%]="topPos" 
+     [style.left.%]="leftPos">
+  
+  <h2 class="text">{{ pseudo }}</h2>
+  <p class="text">Cookie n°{{ currentClick }}</p>
+  
+  <button class="cookie petit" (click)="cliquerCible()">🍪</button>
+</div>

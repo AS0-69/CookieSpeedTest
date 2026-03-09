@@ -1,0 +1,20 @@
+<div class="card">
+  <h1>Cookie Speed Test</h1>
+
+  <div *ngIf="!pseudo && !messageDeconnexion">
+    <p>Veuillez entrer votre pseudo</p>
+    <input type="text" [(ngModel)]="pseudoSaisi" placeholder="Pseudo..." />
+    <button (click)="validerPseudo()">Valider</button>
+  </div>
+
+  <div *ngIf="messageDeconnexion">
+    <p>Vous vous êtes déconnecté</p>
+    <button (click)="messageDeconnexion = false">Valider</button>
+  </div>
+
+  <div *ngIf="pseudo && !messageDeconnexion">
+    <button (click)="jouer()">Jouer</button><br>
+    <button (click)="voirScores()">Scores</button><br>
+    <button (click)="quitter()">Quitter</button>
+  </div>
+</div>

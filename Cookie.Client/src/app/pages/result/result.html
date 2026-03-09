@@ -1,0 +1,25 @@
+<div class="card" *ngIf="resultData">
+  <h1>Cookie Speed Test</h1>
+  <h2>Résumé de la partie</h2>
+  <h3>Pseudo : {{ resultData.game.pseudo }}</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Numéro du cookie</th>
+        <th>Temps</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let clic of resultData.clicks">
+        <td>{{ clic.nbClick }}</td>
+        <td>{{ clic.tempsClick }} s</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Temps moyen : {{ resultData.game.tempsMoyen }} s</p>
+  <p>Classement Global : #{{ resultData.globalRank }}</p>
+  <p>Classement Personnel : #{{ resultData.playerRank }}</p> 
+  <button (click)="retourAccueil()">← Retour à l'accueil</button>
+</div>
