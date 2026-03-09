@@ -51,7 +51,7 @@ namespace Cookie.Api.Controllers
             _context.SaveChanges(); 
 
             return Ok(new { 
-                message = "Partie enregistrée", 
+                message = "Parti enregistrée", 
                 gameId = newGame.Id 
             });
         }
